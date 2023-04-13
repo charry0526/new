@@ -1,0 +1,24 @@
+[2023-01-17T17:26:21+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2023-01-17 17:26:21
+)
+
+[2023-01-17T17:26:21+08:00][sql] CONNECT:[ UseTime:0.000716s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2023-01-17T17:26:21+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001657s ]
+[2023-01-17T17:26:21+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000397s ]
+[2023-01-17T18:08:38+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2023-01-17 18:08:38
+)
+
+[2023-01-17T18:08:38+08:00][sql] CONNECT:[ UseTime:0.001440s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2023-01-17T18:08:38+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.002453s ]
+[2023-01-17T18:08:38+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000555s ]
+[2023-01-17T18:21:38+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2023-01-17 18:21:38
+)
+
+[2023-01-17T18:21:38+08:00][sql] CONNECT:[ UseTime:0.001186s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2023-01-17T18:21:38+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.002093s ]
+[2023-01-17T18:21:38+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000462s ]

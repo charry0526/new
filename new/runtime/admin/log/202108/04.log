@@ -1,0 +1,6 @@
+[2021-08-04T10:42:23+08:00][sql] CONNECT:[ UseTime:0.017770s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-04T10:42:23+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.001369s ]
+[2021-08-04T10:42:23+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.036682s ]
+[2021-08-04T23:44:25+08:00][sql] CONNECT:[ UseTime:0.000634s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-04T23:44:25+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.001217s ]
+[2021-08-04T23:44:25+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.000629s ]

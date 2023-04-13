@@ -1,0 +1,6 @@
+[2023-04-12T14:24:37+08:00][sql] CONNECT:[ UseTime:0.001336s ] mysql:host=127.0.0.1;port=3306;dbname=gp123123;charset=utf8
+[2023-04-12T14:24:37+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.002080s ]
+[2023-04-12T14:24:37+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.000435s ]
+[2023-04-12T19:47:04+08:00][sql] CONNECT:[ UseTime:0.001593s ] mysql:host=127.0.0.1;port=3306;dbname=gp123123;charset=utf8
+[2023-04-12T19:47:04+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.001430s ]
+[2023-04-12T19:47:04+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.000331s ]

@@ -1,0 +1,8 @@
+[2021-08-07T12:17:10+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-07 12:17:10
+)
+
+[2021-08-07T12:17:10+08:00][sql] CONNECT:[ UseTime:0.007729s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-07T12:17:10+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001350s ]
+[2021-08-07T12:17:10+08:00][sql] SELECT * FROM `user` WHERE  `id` = 424 LIMIT 1 [ RunTime:0.000443s ]

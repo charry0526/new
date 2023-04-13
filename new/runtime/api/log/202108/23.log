@@ -1,0 +1,96 @@
+[2021-08-23T13:48:51+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-23 13:48:51
+)
+
+[2021-08-23T13:48:51+08:00][sql] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T13:48:51+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001054s ]
+[2021-08-23T13:48:51+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000456s ]
+[2021-08-23T13:48:53+08:00][info] 接口地址：Newlist/index,接口输入：Array
+(
+    [timestamp] => 2021-08-23 13:48:53
+)
+
+[2021-08-23T13:48:53+08:00][sql] CONNECT:[ UseTime:0.000379s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T13:48:53+08:00][sql] SHOW FULL COLUMNS FROM `newlist` [ RunTime:0.000869s ]
+[2021-08-23T13:48:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `newlist` [ RunTime:0.000264s ]
+[2021-08-23T13:48:53+08:00][sql] SELECT * FROM `newlist` ORDER BY `newlist_id` DESC LIMIT 0,20 [ RunTime:0.000261s ]
+[2021-08-23T13:48:58+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-23 13:48:58
+)
+
+[2021-08-23T13:48:58+08:00][sql] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T13:48:58+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001068s ]
+[2021-08-23T13:48:58+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000453s ]
+[2021-08-23T13:48:58+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.000724s ]
+[2021-08-23T13:48:58+08:00][sql] INSERT INTO `lists` SET `agent` = '测试' , `zname` = '跑跑' , `phone` = '15888888888' , `zts` = 3 , `mrsj` = 1629697738 , `xgname` = '薇雅网络' , `codes` = '600151' , `nums` = '10' , `bzj` = 188 [ RunTime:0.000297s ]
+[2021-08-23T13:48:58+08:00][sql] UPDATE `user`  SET `djzj` = `djzj` + 188  WHERE  `id` = 391 [ RunTime:0.009191s ]
+[2021-08-23T13:48:58+08:00][sql] UPDATE `user`  SET `sgzj` = `sgzj` - 188  WHERE  `id` = 391 [ RunTime:0.004424s ]
+[2021-08-23T13:48:58+08:00][sql] UPDATE `user`  SET `user_amt` = `user_amt` - 188  WHERE  `id` = 391 [ RunTime:0.007935s ]
+[2021-08-23T14:01:54+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-23 14:01:54
+)
+
+[2021-08-23T14:01:54+08:00][sql] CONNECT:[ UseTime:0.000329s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T14:01:54+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001256s ]
+[2021-08-23T14:01:54+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000821s ]
+[2021-08-23T14:01:54+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.001063s ]
+[2021-08-23T14:01:54+08:00][sql] INSERT INTO `lists` SET `agent` = '测试' , `zname` = '跑跑' , `phone` = '15888888888' , `zts` = 3 , `mrsj` = 1629698514 , `xgname` = '百事可乐' , `codes` = '10000' , `nums` = '10' , `bzj` = 200 [ RunTime:0.000324s ]
+[2021-08-23T14:01:54+08:00][sql] UPDATE `user`  SET `djzj` = `djzj` + 200  WHERE  `id` = 391 [ RunTime:0.005082s ]
+[2021-08-23T14:01:54+08:00][sql] UPDATE `user`  SET `sgzj` = `sgzj` - 200  WHERE  `id` = 391 [ RunTime:0.004633s ]
+[2021-08-23T14:01:54+08:00][sql] UPDATE `user`  SET `user_amt` = `user_amt` - 200  WHERE  `id` = 391 [ RunTime:0.004101s ]
+[2021-08-23T14:02:15+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-23 14:02:15
+)
+
+[2021-08-23T14:02:15+08:00][sql] CONNECT:[ UseTime:0.000315s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T14:02:15+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001338s ]
+[2021-08-23T14:02:15+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000620s ]
+[2021-08-23T14:02:15+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.009219s ]
+[2021-08-23T14:02:15+08:00][sql] INSERT INTO `lists` SET `agent` = '测试' , `zname` = '跑跑' , `phone` = '15888888888' , `zts` = 3 , `mrsj` = 1629698535 , `xgname` = '联想电脑' , `codes` = '3566' , `nums` = '10' , `bzj` = 120 [ RunTime:0.000467s ]
+[2021-08-23T14:02:15+08:00][sql] UPDATE `user`  SET `djzj` = `djzj` + 120  WHERE  `id` = 391 [ RunTime:0.003410s ]
+[2021-08-23T14:02:15+08:00][sql] UPDATE `user`  SET `sgzj` = `sgzj` - 120  WHERE  `id` = 391 [ RunTime:0.005452s ]
+[2021-08-23T14:02:15+08:00][sql] UPDATE `user`  SET `user_amt` = `user_amt` - 120  WHERE  `id` = 391 [ RunTime:0.005173s ]
+[2021-08-23T14:04:32+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-23 14:04:32
+)
+
+[2021-08-23T14:04:32+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T14:04:32+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001098s ]
+[2021-08-23T14:04:32+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000450s ]
+[2021-08-23T14:04:32+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.000772s ]
+[2021-08-23T14:04:32+08:00][sql] INSERT INTO `lists` SET `agent` = '测试' , `zname` = '跑跑' , `phone` = '15888888888' , `zts` = 3 , `mrsj` = 1629698672 , `xgname` = '薇雅网络' , `codes` = '600151' , `nums` = '10' , `bzj` = 188 [ RunTime:0.000438s ]
+[2021-08-23T14:04:32+08:00][sql] UPDATE `user`  SET `djzj` = `djzj` + 188  WHERE  `id` = 391 [ RunTime:0.006062s ]
+[2021-08-23T14:04:32+08:00][sql] UPDATE `user`  SET `sgzj` = `sgzj` - 188  WHERE  `id` = 391 [ RunTime:0.005805s ]
+[2021-08-23T14:04:32+08:00][sql] UPDATE `user`  SET `user_amt` = `user_amt` - 188  WHERE  `id` = 391 [ RunTime:0.003327s ]
+[2021-08-23T15:08:02+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-23 15:08:02
+)
+
+[2021-08-23T15:08:02+08:00][sql] CONNECT:[ UseTime:0.000462s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T15:08:02+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001353s ]
+[2021-08-23T15:08:02+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000376s ]
+[2021-08-23T15:08:21+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-23 15:08:21
+)
+
+[2021-08-23T15:08:21+08:00][sql] CONNECT:[ UseTime:0.000362s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T15:08:21+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001023s ]
+[2021-08-23T15:08:21+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000415s ]
+[2021-08-23T15:08:35+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-23 15:08:35
+)
+
+[2021-08-23T15:08:35+08:00][sql] CONNECT:[ UseTime:0.001299s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-23T15:08:35+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001534s ]
+[2021-08-23T15:08:35+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000517s ]
+[2021-08-23T17:59:42+08:00][error] 错误信息:controller not exists:\think\app
+[2021-08-23T17:59:42+08:00][error] 错误信息:controller not exists:\think\Lang
+[2021-08-23T17:59:42+08:00][error] 错误信息:controller not exists:\think\Lang

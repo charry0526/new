@@ -1,0 +1,86 @@
+[2021-07-30T16:30:56+08:00][sql] CONNECT:[ UseTime:0.000535s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:30:56+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.001102s ]
+[2021-07-30T16:30:56+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.002219s ]
+[2021-07-30T16:31:18+08:00][sql] CONNECT:[ UseTime:0.000458s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:18+08:00][sql] SHOW FULL COLUMNS FROM `admin_user` [ RunTime:0.000902s ]
+[2021-07-30T16:31:18+08:00][sql] SELECT `a`.`user_id`,`a`.`name`,a.user as username,`a`.`status`,a.role_id as user_role_ids,`b`.`role_id`,b.name as role_name,b.status as role_status FROM `admin_user` `a` INNER JOIN `role` `b` ON a.role_id in(b.role_id) WHERE  `a`.`user` = 'admin'  AND `a`.`pwd` = '7b2ad4e307d5b3ec9e786054225d0985' LIMIT 1 [ RunTime:0.002215s ]
+[2021-07-30T16:31:32+08:00][sql] CONNECT:[ UseTime:0.000426s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:32+08:00][sql] SHOW FULL COLUMNS FROM `admin_user` [ RunTime:0.001132s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT `a`.`user_id`,`a`.`name`,a.user as username,`a`.`status`,a.role_id as user_role_ids,`b`.`role_id`,b.name as role_name,b.status as role_status FROM `admin_user` `a` INNER JOIN `role` `b` ON a.role_id in(b.role_id) WHERE  `a`.`user` = 'admin'  AND `a`.`pwd` = 'b720cf94bcd2a6157043cac25209b9ab' LIMIT 1 [ RunTime:0.000397s ]
+[2021-07-30T16:31:32+08:00][sql] SHOW FULL COLUMNS FROM `access` [ RunTime:0.000722s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT `id`,`purviewval` FROM `access` WHERE  `role_id` = 1 [ RunTime:0.000968s ]
+[2021-07-30T16:31:32+08:00][sql] SHOW FULL COLUMNS FROM `log` [ RunTime:0.000823s ]
+[2021-07-30T16:31:32+08:00][sql] INSERT INTO `log` SET `application_name` = 'admin' , `username` = 'admin' , `url` = 'http://xght.dxcfd.com/admin/Login/index.html' , `ip` = '43.129.26.70' , `useragent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36' , `create_time` = 1627633892 , `type` = 1 [ RunTime:0.007723s ]
+[2021-07-30T16:31:32+08:00][sql] CONNECT:[ UseTime:0.000357s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:32+08:00][sql] SHOW FULL COLUMNS FROM `menu` [ RunTime:0.001217s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 0 ORDER BY `sortid` ASC [ RunTime:0.001275s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 778 ORDER BY `sortid` ASC [ RunTime:0.000421s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 778 ORDER BY `sortid` ASC [ RunTime:0.000457s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 779 ORDER BY `sortid` ASC [ RunTime:0.000454s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 779 ORDER BY `sortid` ASC [ RunTime:0.000413s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 780 ORDER BY `sortid` ASC [ RunTime:0.000393s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 780 ORDER BY `sortid` ASC [ RunTime:0.000380s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 12 ORDER BY `sortid` ASC [ RunTime:0.000435s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 12 ORDER BY `sortid` ASC [ RunTime:0.000491s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 17 ORDER BY `sortid` ASC [ RunTime:0.000452s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 17 ORDER BY `sortid` ASC [ RunTime:0.000394s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 80 ORDER BY `sortid` ASC [ RunTime:0.000432s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 80 ORDER BY `sortid` ASC [ RunTime:0.000385s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 21 ORDER BY `sortid` ASC [ RunTime:0.000386s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 21 ORDER BY `sortid` ASC [ RunTime:0.000427s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 18 ORDER BY `sortid` ASC [ RunTime:0.000387s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 18 ORDER BY `sortid` ASC [ RunTime:0.000406s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 19 ORDER BY `sortid` ASC [ RunTime:0.000383s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 19 ORDER BY `sortid` ASC [ RunTime:0.000431s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 41 ORDER BY `sortid` ASC [ RunTime:0.000374s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 41 ORDER BY `sortid` ASC [ RunTime:0.000375s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 670 ORDER BY `sortid` ASC [ RunTime:0.000386s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 670 ORDER BY `sortid` ASC [ RunTime:0.000377s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 673 ORDER BY `sortid` ASC [ RunTime:0.000402s ]
+[2021-07-30T16:31:32+08:00][sql] SELECT * FROM `menu` WHERE  `status` = 1  AND `app_id` = 1  AND `pid` = 673 ORDER BY `sortid` ASC [ RunTime:0.000370s ]
+[2021-07-30T16:31:37+08:00][sql] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:37+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001252s ]
+[2021-07-30T16:31:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `user` [ RunTime:0.000419s ]
+[2021-07-30T16:31:37+08:00][sql] SELECT `id`,`agent_id`,`agent_name`,`phone`,`nick_name`,`sgzj`,`djzj` FROM `user` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000412s ]
+[2021-07-30T16:31:40+08:00][sql] CONNECT:[ UseTime:0.000511s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:40+08:00][sql] SHOW FULL COLUMNS FROM `application` [ RunTime:0.002827s ]
+[2021-07-30T16:31:40+08:00][sql] SELECT * FROM `application` ORDER BY `app_id` DESC [ RunTime:0.001027s ]
+[2021-07-30T16:31:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `application` [ RunTime:0.000276s ]
+[2021-07-30T16:31:41+08:00][sql] CONNECT:[ UseTime:0.000407s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:41+08:00][sql] show tables [ RunTime:0.001402s ]
+[2021-07-30T16:31:41+08:00][sql] SHOW FULL COLUMNS FROM `application` [ RunTime:0.001432s ]
+[2021-07-30T16:31:41+08:00][sql] SELECT * FROM `application` WHERE  `app_id` = 1 LIMIT 1 [ RunTime:0.000314s ]
+[2021-07-30T16:31:41+08:00][sql] SELECT * FROM `application` WHERE  ( 1=1 ) [ RunTime:0.000341s ]
+[2021-07-30T16:31:41+08:00][sql] SELECT * FROM `application` WHERE  ( 1=1 ) [ RunTime:0.000348s ]
+[2021-07-30T16:31:42+08:00][sql] CONNECT:[ UseTime:0.000352s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:42+08:00][sql] SHOW FULL COLUMNS FROM `menu` [ RunTime:0.001280s ]
+[2021-07-30T16:31:42+08:00][sql] SELECT * FROM `menu` WHERE  `app_id` = 1 ORDER BY `sortid` ASC [ RunTime:0.000504s ]
+[2021-07-30T16:31:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `menu` WHERE  `app_id` = 1 ORDER BY `sortid` ASC [ RunTime:0.000785s ]
+[2021-07-30T16:31:54+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:31:54+08:00][sql] SHOW FULL COLUMNS FROM `application` [ RunTime:0.000923s ]
+[2021-07-30T16:31:54+08:00][sql] SELECT * FROM `application` WHERE  `app_id` = 227 LIMIT 1 [ RunTime:0.000313s ]
+[2021-07-30T16:32:01+08:00][sql] CONNECT:[ UseTime:0.000322s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:01+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.000843s ]
+[2021-07-30T16:32:01+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.000278s ]
+[2021-07-30T16:32:01+08:00][sql] select role_id,name,pid from role [ RunTime:0.000275s ]
+[2021-07-30T16:32:02+08:00][sql] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:02+08:00][sql] select a.*,group_concat(b.name) as role_name from admin_user as a left join role as b on find_in_set(b.role_id,a.role_id)  group by a.user_id order by user_id desc limit 0,20 [ RunTime:0.000851s ]
+[2021-07-30T16:32:02+08:00][sql] select count(*) as count from (select a.*,group_concat(b.name) as role_name from admin_user as a left join role as b on find_in_set(b.role_id,a.role_id)  group by a.user_id) as tp [ RunTime:0.000750s ]
+[2021-07-30T16:32:02+08:00][sql] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:02+08:00][sql] SHOW FULL COLUMNS FROM `config` [ RunTime:0.001167s ]
+[2021-07-30T16:32:02+08:00][sql] SELECT `name`,`data` FROM `config` [ RunTime:0.000283s ]
+[2021-07-30T16:32:03+08:00][sql] CONNECT:[ UseTime:0.006836s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:03+08:00][sql] SHOW FULL COLUMNS FROM `upload_config` [ RunTime:0.005923s ]
+[2021-07-30T16:32:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `upload_config` [ RunTime:0.005395s ]
+[2021-07-30T16:32:03+08:00][sql] SELECT `id`,`title`,`thumb_status`,`upload_replace`,`thumb_width`,`thumb_height`,`thumb_type` FROM `upload_config` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000393s ]
+[2021-07-30T16:32:05+08:00][sql] CONNECT:[ UseTime:0.000308s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:05+08:00][sql] SHOW FULL COLUMNS FROM `upload_config` [ RunTime:0.001136s ]
+[2021-07-30T16:32:05+08:00][sql] SELECT * FROM `upload_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000351s ]
+[2021-07-30T16:32:12+08:00][sql] CONNECT:[ UseTime:0.000576s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:12+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.001211s ]
+[2021-07-30T16:32:12+08:00][sql] SELECT COUNT(*) AS think_count FROM `lists` [ RunTime:0.001957s ]
+[2021-07-30T16:32:12+08:00][sql] SELECT `lists_id`,`agent`,`zname`,`phone`,`xgname`,`codes`,`nums`,`bzj`,`zts`,`mrsj` FROM `lists` ORDER BY `lists_id` DESC LIMIT 0,20 [ RunTime:0.000323s ]
+[2021-07-30T16:32:13+08:00][sql] CONNECT:[ UseTime:0.000577s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-07-30T16:32:13+08:00][sql] SHOW FULL COLUMNS FROM `newlist` [ RunTime:0.001178s ]
+[2021-07-30T16:32:13+08:00][sql] SELECT COUNT(*) AS think_count FROM `newlist` [ RunTime:0.002190s ]
+[2021-07-30T16:32:13+08:00][sql] SELECT `newlist_id`,`names`,`code`,`price`,`zt` FROM `newlist` ORDER BY `newlist_id` DESC LIMIT 0,20 [ RunTime:0.000318s ]

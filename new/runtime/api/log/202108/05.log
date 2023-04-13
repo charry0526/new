@@ -1,0 +1,18 @@
+[2021-08-05T13:52:48+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-05 13:52:48
+)
+
+[2021-08-05T13:52:48+08:00][sql] CONNECT:[ UseTime:0.010088s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-05T13:52:48+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001579s ]
+[2021-08-05T13:52:48+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000590s ]
+[2021-08-05T13:54:16+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-05 13:54:16
+)
+
+[2021-08-05T13:54:16+08:00][sql] CONNECT:[ UseTime:0.010516s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-05T13:54:16+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001369s ]
+[2021-08-05T13:54:16+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000356s ]
+[2021-08-05T23:19:50+08:00][error] [0]控制器不存在[/www/wwwroot/3.0xingu/xingupeizi/xingu.dxcfd.com/new/app/api/controller/Error.php:9]
+[2021-08-05T23:22:22+08:00][error] [0]控制器不存在[/www/wwwroot/3.0xingu/xingupeizi/xingu.dxcfd.com/new/app/api/controller/Error.php:9]

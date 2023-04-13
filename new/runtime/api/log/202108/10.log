@@ -1,0 +1,199 @@
+[2021-08-10T19:47:16+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 19:47:16
+)
+
+[2021-08-10T19:47:16+08:00][sql] CONNECT:[ UseTime:0.007210s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T19:47:16+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001463s ]
+[2021-08-10T19:47:16+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000450s ]
+[2021-08-10T19:47:20+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 19:47:20
+)
+
+[2021-08-10T19:47:20+08:00][sql] CONNECT:[ UseTime:0.000391s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T19:47:20+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001380s ]
+[2021-08-10T19:47:20+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000360s ]
+[2021-08-10T20:00:37+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:00:37
+)
+
+[2021-08-10T20:00:37+08:00][sql] CONNECT:[ UseTime:0.000419s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:00:37+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001370s ]
+[2021-08-10T20:00:37+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000433s ]
+[2021-08-10T20:00:38+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:00:38
+)
+
+[2021-08-10T20:00:38+08:00][sql] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:00:38+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001924s ]
+[2021-08-10T20:00:38+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000582s ]
+[2021-08-10T20:01:56+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:01:56
+)
+
+[2021-08-10T20:01:56+08:00][sql] CONNECT:[ UseTime:0.000299s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:01:56+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001411s ]
+[2021-08-10T20:01:56+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000657s ]
+[2021-08-10T20:04:05+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:04:05
+)
+
+[2021-08-10T20:04:05+08:00][sql] CONNECT:[ UseTime:0.000531s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:04:05+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001444s ]
+[2021-08-10T20:04:05+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.001457s ]
+[2021-08-10T20:05:12+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:05:12
+)
+
+[2021-08-10T20:05:12+08:00][sql] CONNECT:[ UseTime:0.000634s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:05:12+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001551s ]
+[2021-08-10T20:05:12+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000455s ]
+[2021-08-10T20:05:20+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:05:20
+)
+
+[2021-08-10T20:05:20+08:00][sql] CONNECT:[ UseTime:0.005621s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:05:20+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001817s ]
+[2021-08-10T20:05:20+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000548s ]
+[2021-08-10T20:05:41+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:05:41
+)
+
+[2021-08-10T20:05:41+08:00][sql] CONNECT:[ UseTime:0.004161s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:05:41+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001459s ]
+[2021-08-10T20:05:41+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000400s ]
+[2021-08-10T20:05:59+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:05:59
+)
+
+[2021-08-10T20:05:59+08:00][sql] CONNECT:[ UseTime:0.003067s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:05:59+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001119s ]
+[2021-08-10T20:05:59+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000375s ]
+[2021-08-10T20:10:45+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:10:45
+)
+
+[2021-08-10T20:10:45+08:00][sql] CONNECT:[ UseTime:0.014217s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:10:45+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001365s ]
+[2021-08-10T20:10:45+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000340s ]
+[2021-08-10T20:11:06+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:11:06
+)
+
+[2021-08-10T20:11:06+08:00][sql] CONNECT:[ UseTime:0.001866s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:11:06+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.004418s ]
+[2021-08-10T20:11:06+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000400s ]
+[2021-08-10T20:12:22+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:12:22
+)
+
+[2021-08-10T20:12:22+08:00][sql] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:12:22+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001384s ]
+[2021-08-10T20:12:22+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000447s ]
+[2021-08-10T20:43:20+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 20:43:20
+)
+
+[2021-08-10T20:43:20+08:00][sql] CONNECT:[ UseTime:0.000293s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T20:43:20+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001367s ]
+[2021-08-10T20:43:20+08:00][sql] SELECT * FROM `user` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000430s ]
+[2021-08-10T21:18:57+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:18:57
+)
+
+[2021-08-10T21:18:57+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:18:57+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001380s ]
+[2021-08-10T21:18:57+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000824s ]
+[2021-08-10T21:35:41+08:00][info] 接口地址：Lists/getprice,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:35:41
+)
+
+[2021-08-10T21:35:41+08:00][sql] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:35:41+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001183s ]
+[2021-08-10T21:35:41+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000655s ]
+[2021-08-10T21:35:50+08:00][info] 接口地址：Newlist/index,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:35:50
+)
+
+[2021-08-10T21:35:50+08:00][sql] CONNECT:[ UseTime:0.001206s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:35:50+08:00][sql] SHOW FULL COLUMNS FROM `newlist` [ RunTime:0.001165s ]
+[2021-08-10T21:35:50+08:00][sql] SELECT COUNT(*) AS think_count FROM `newlist` [ RunTime:0.003059s ]
+[2021-08-10T21:35:50+08:00][sql] SELECT * FROM `newlist` ORDER BY `newlist_id` DESC LIMIT 0,20 [ RunTime:0.000280s ]
+[2021-08-10T21:37:39+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:37:38
+)
+
+[2021-08-10T21:37:39+08:00][sql] CONNECT:[ UseTime:0.005190s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:37:39+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001460s ]
+[2021-08-10T21:37:39+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000447s ]
+[2021-08-10T21:37:39+08:00][sql] SHOW FULL COLUMNS FROM `lists` [ RunTime:0.000984s ]
+[2021-08-10T21:37:39+08:00][sql] INSERT INTO `lists` SET `agent` = '测试' , `zname` = '跑跑' , `phone` = '15888888888' , `zts` = 3 , `mrsj` = 1628602658 , `xgname` = '薇雅网络' , `codes` = '600151' , `nums` = '' , `bzj` = 0 [ RunTime:0.002710s ]
+[2021-08-10T21:37:39+08:00][sql] UPDATE `user`  SET `djzj` = `djzj` + 0  WHERE  `id` = 391 [ RunTime:0.000381s ]
+[2021-08-10T21:37:39+08:00][sql] UPDATE `user`  SET `sgzj` = `sgzj` - 0  WHERE  `id` = 391 [ RunTime:0.000356s ]
+[2021-08-10T21:37:39+08:00][sql] UPDATE `user`  SET `user_amt` = `user_amt` - 0  WHERE  `id` = 391 [ RunTime:0.000295s ]
+[2021-08-10T21:37:45+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:37:45
+)
+
+[2021-08-10T21:37:45+08:00][sql] CONNECT:[ UseTime:0.023277s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:37:45+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001720s ]
+[2021-08-10T21:37:45+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000792s ]
+[2021-08-10T21:37:51+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:37:51
+)
+
+[2021-08-10T21:37:51+08:00][sql] CONNECT:[ UseTime:0.000719s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:37:51+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001745s ]
+[2021-08-10T21:37:51+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000921s ]
+[2021-08-10T21:37:57+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:37:57
+)
+
+[2021-08-10T21:37:57+08:00][sql] CONNECT:[ UseTime:0.000340s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:37:57+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001408s ]
+[2021-08-10T21:37:57+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000546s ]
+[2021-08-10T21:38:03+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:38:03
+)
+
+[2021-08-10T21:38:03+08:00][sql] CONNECT:[ UseTime:0.000505s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:38:03+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.001092s ]
+[2021-08-10T21:38:03+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.000496s ]
+[2021-08-10T21:38:09+08:00][info] 接口地址：Lists/add,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:38:09
+)
+
+[2021-08-10T21:38:09+08:00][sql] CONNECT:[ UseTime:0.000660s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:38:09+08:00][sql] SHOW FULL COLUMNS FROM `user` [ RunTime:0.003353s ]
+[2021-08-10T21:38:09+08:00][sql] SELECT * FROM `user` WHERE  `id` = 391 LIMIT 1 [ RunTime:0.001564s ]
+[2021-08-10T21:41:10+08:00][info] 接口地址：Newlist/index,接口输入：Array
+(
+    [timestamp] => 2021-08-10 21:41:10
+)
+
+[2021-08-10T21:41:10+08:00][sql] CONNECT:[ UseTime:0.001307s ] mysql:host=127.0.0.1;port=3306;dbname=aa;charset=utf8
+[2021-08-10T21:41:10+08:00][sql] SHOW FULL COLUMNS FROM `newlist` [ RunTime:0.001234s ]
+[2021-08-10T21:41:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `newlist` [ RunTime:0.000318s ]
+[2021-08-10T21:41:10+08:00][sql] SELECT * FROM `newlist` ORDER BY `newlist_id` DESC LIMIT 0,20 [ RunTime:0.000262s ]

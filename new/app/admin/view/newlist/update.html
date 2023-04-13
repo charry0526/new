@@ -1,0 +1,91 @@
+{extend name='common/_container'}
+{block name="content"}
+<div class="ibox float-e-margins">
+<input type="hidden" name='newlist_id' id='newlist_id' value="{$info.newlist_id}" />
+	<div class="ibox-content">
+		<div class="form-horizontal" id="CodeInfoForm">
+			<div class="row">
+				<div class="col-sm-12">
+				<!-- form start -->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">新股名称：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="names" value="{$info.names}" name="names" class="form-control" placeholder="请输入新股名称">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">申购代码：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="code" value="{$info.code}" name="code" class="form-control" placeholder="请输入申购代码">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">发行价格：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="price" value="{$info.price}" name="price" class="form-control" placeholder="请输入发行价格">
+						</div>
+					</div>
+					<div class="form-group layui-form">
+						<label class="col-sm-2 control-label">状态：</label>
+						<div class="col-sm-9">
+							<?php if(!isset($info['zt'])){ $info['zt'] = 0; }; ?>
+							<input name="zt" value="1" type="radio" {if condition="$info.zt eq '1'"}checked{/if} title="开启">
+							<input name="zt" value="0" type="radio" {if condition="$info.zt eq '0'"}checked{/if} title="关闭">
+						</div>
+					</div>
+				<!-- form end -->
+				</div>
+			</div>
+			<div class="hr-line-dashed"></div>
+			<div class="row btn-group-m-t">
+				<div class="col-sm-9 col-sm-offset-1">
+					<button type="button" class="btn btn-primary" onclick="CodeInfoDlg.update()" id="ensure">
+						<i class="fa fa-check"></i>&nbsp;确认提交
+					</button>
+					<button type="button" class="btn btn-danger" onclick="CodeInfoDlg.close()" id="cancel">
+						<i class="fa fa-eraser"></i>&nbsp;取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="__PUBLIC__/static/js/upload.js" charset="utf-8"></script>
+<script src="__PUBLIC__/static/js/plugins/layui/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['form'],function(){});
+var CodeInfoDlg = {
+	CodeInfoData: {},
+	validateFields: {
+	 }
+}
+
+CodeInfoDlg.collectData = function () {
+	this.set('newlist_id').set('names').set('code').set('price');
+};
+
+CodeInfoDlg.update = function () {
+	 this.clearData();
+	 this.collectData();
+	 if (!this.validate()) {
+	 	return;
+	 }
+	 var zt = $("input[name = 'zt']:checked").val();
+	 var ajax = new $ax(Feng.ctxPath + "/Newlist/update", function (data) {
+	 	if ('00' === data.status) {
+	 		Feng.success(data.msg,1000);
+	 		window.parent.CodeGoods.table.refresh();
+	 		CodeInfoDlg.close();
+	 	} else {
+	 		Feng.error(data.msg + "！",1000);
+		 }
+	 })
+	 ajax.set('zt',zt);
+	 ajax.set(this.CodeInfoData);
+	 ajax.start();
+};
+
+
+</script>
+<script src="__PUBLIC__/static/js/base.js" charset="utf-8"></script>
+{/block}

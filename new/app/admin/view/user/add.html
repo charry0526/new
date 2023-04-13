@@ -1,0 +1,248 @@
+{extend name='common/_container'}
+{block name="content"}
+<div class="ibox float-e-margins">
+	<div class="ibox-content">
+		<div class="form-horizontal" id="CodeInfoForm">
+			<div class="row">
+				<div class="col-sm-12">
+				<!-- form start -->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">所属代理/ID：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="agent_id" value="" name="agent_id" class="form-control" placeholder="请输入所属代理/ID">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">agent_name：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="agent_name" value="{$info.agent_name}" name="agent_name" class="form-control" placeholder="请输入agent_name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">手机号：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="phone" value="" name="phone" class="form-control" placeholder="请输入手机号">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">user_pwd：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="user_pwd" value="{$info.user_pwd}" name="user_pwd" class="form-control" placeholder="请输入user_pwd">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">with_pwd：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="with_pwd" value="{$info.with_pwd}" name="with_pwd" class="form-control" placeholder="请输入with_pwd">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">真实姓名：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="nick_name" value="" name="nick_name" class="form-control" placeholder="请输入真实姓名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">real_name：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="real_name" value="{$info.real_name}" name="real_name" class="form-control" placeholder="请输入real_name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">id_card：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="id_card" value="{$info.id_card}" name="id_card" class="form-control" placeholder="请输入id_card">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">user_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="user_amt" value="{$info.user_amt}" name="user_amt" class="form-control" placeholder="请输入user_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">enable_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="enable_amt" value="{$info.enable_amt}" name="enable_amt" class="form-control" placeholder="请输入enable_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">sum_charge_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="sum_charge_amt" value="{$info.sum_charge_amt}" name="sum_charge_amt" class="form-control" placeholder="请输入sum_charge_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">sum_buy_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="sum_buy_amt" value="{$info.sum_buy_amt}" name="sum_buy_amt" class="form-control" placeholder="请输入sum_buy_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">推荐手机：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="recom_phone" value="{$info.recom_phone}" name="recom_phone" class="form-control" placeholder="请输入推荐手机">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">is_lock：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="is_lock" value="{$info.is_lock}" name="is_lock" class="form-control" placeholder="请输入is_lock">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">is_login：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="is_login" value="{$info.is_login}" name="is_login" class="form-control" placeholder="请输入is_login">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">reg_time：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="reg_time" value="{$info.reg_time}" name="reg_time" class="form-control" placeholder="请输入reg_time">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">reg_ip：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="reg_ip" value="{$info.reg_ip}" name="reg_ip" class="form-control" placeholder="请输入reg_ip">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">reg_address：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="reg_address" value="{$info.reg_address}" name="reg_address" class="form-control" placeholder="请输入reg_address">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">img1_key：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="img1_key" value="{$info.img1_key}" name="img1_key" class="form-control" placeholder="请输入img1_key">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">img2_key：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="img2_key" value="{$info.img2_key}" name="img2_key" class="form-control" placeholder="请输入img2_key">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">img3_key：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="img3_key" value="{$info.img3_key}" name="img3_key" class="form-control" placeholder="请输入img3_key">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">is_active：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="is_active" value="{$info.is_active}" name="is_active" class="form-control" placeholder="请输入is_active">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">auth_msg：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="auth_msg" value="{$info.auth_msg}" name="auth_msg" class="form-control" placeholder="请输入auth_msg">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">user_index_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="user_index_amt" value="{$info.user_index_amt}" name="user_index_amt" class="form-control" placeholder="请输入user_index_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">enable_index_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="enable_index_amt" value="{$info.enable_index_amt}" name="enable_index_amt" class="form-control" placeholder="请输入enable_index_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">user_fut_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="user_fut_amt" value="{$info.user_fut_amt}" name="user_fut_amt" class="form-control" placeholder="请输入user_fut_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">enable_fut_amt：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="enable_fut_amt" value="{$info.enable_fut_amt}" name="enable_fut_amt" class="form-control" placeholder="请输入enable_fut_amt">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">withdrawal_Pwd：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="withdrawal_Pwd" value="{$info.withdrawal_Pwd}" name="withdrawal_Pwd" class="form-control" placeholder="请输入withdrawal_Pwd">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">操盘金额：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="trading_amount" value="{$info.trading_amount}" name="trading_amount" class="form-control" placeholder="请输入操盘金额">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">是否授权：1、已授权，0、未授权：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="is_authorize" value="{$info.is_authorize}" name="is_authorize" class="form-control" placeholder="请输入是否授权：1、已授权，0、未授权">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">申购资金：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="sgzj" value="{$info.sgzj}" name="sgzj" class="form-control" placeholder="请输入申购资金">
+						</div>
+					</div>
+				<!-- form end -->
+				</div>
+			</div>
+			<div class="hr-line-dashed"></div>
+			<div class="row btn-group-m-t">
+				<div class="col-sm-9 col-sm-offset-1">
+					<button type="button" class="btn btn-primary" onclick="CodeInfoDlg.add()" id="ensure">
+						<i class="fa fa-check"></i>&nbsp;确认提交
+					</button>
+					<button type="button" class="btn btn-danger" onclick="CodeInfoDlg.close()" id="cancel">
+						<i class="fa fa-eraser"></i>&nbsp;取消
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="__PUBLIC__/static/js/upload.js" charset="utf-8"></script>
+<script src="__PUBLIC__/static/js/plugins/layui/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['form'],function(){});
+var CodeInfoDlg = {
+	CodeInfoData: {},
+	validateFields: {
+	 }
+}
+
+CodeInfoDlg.collectData = function () {
+	this.set('id').set('agent_id').set('agent_name').set('phone').set('user_pwd').set('with_pwd').set('nick_name').set('real_name').set('id_card').set('user_amt').set('enable_amt').set('sum_charge_amt').set('sum_buy_amt').set('recom_phone').set('is_lock').set('is_login').set('reg_time').set('reg_ip').set('reg_address').set('img1_key').set('img2_key').set('img3_key').set('is_active').set('auth_msg').set('user_index_amt').set('enable_index_amt').set('user_fut_amt').set('enable_fut_amt').set('withdrawal_Pwd').set('trading_amount').set('is_authorize').set('sgzj');
+};
+
+CodeInfoDlg.add = function () {
+	 this.clearData();
+	 this.collectData();
+	 if (!this.validate()) {
+	 	return;
+	 }
+	 var ajax = new $ax(Feng.ctxPath + "/User/add", function (data) {
+	 	if ('00' === data.status) {
+	 		Feng.success(data.msg,1000);
+	 		window.parent.CodeGoods.table.refresh();
+	 		CodeInfoDlg.close();
+	 	} else {
+	 		Feng.error(data.msg + "！",1000);
+		 }
+	 })
+	 ajax.set(this.CodeInfoData);
+	 ajax.start();
+};
+
+
+</script>
+<script src="__PUBLIC__/static/js/base.js" charset="utf-8"></script>
+{/block}
