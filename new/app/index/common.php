@@ -21,8 +21,8 @@ function redis($token){
 	
 	$redis = new \Redis();
         
-        $redis->connect("127.0.0.1","6379");
-		$redis->auth('123456789');
+        $redis->connect("192.168.1.8","6379");
+//		$redis->auth('123456789');
         
       $result = json_decode($redis->get($token),true);
   

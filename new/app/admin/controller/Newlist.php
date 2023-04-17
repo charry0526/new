@@ -33,7 +33,7 @@ class Newlist extends Admin {
 			$order  = $this->request->post('order', '', 'serach_in');	//排序字段 bootstrap-table 传入
 			$sort  = $this->request->post('sort', '', 'serach_in');		//排序方式 desc 或 asc
 
-			$field = 'newlist_id,names,code,price,zt';
+			$field = '*';
 			$orderby = ($sort && $order) ? $sort.' '.$order : 'newlist_id desc';
 
 			$res = NewlistService::indexList(formatWhere($where),$field,$orderby,$limit,$page);
@@ -74,7 +74,7 @@ class Newlist extends Admin {
 			$this->view->assign('info',checkData(NewlistModel::find($newlist_id)));
 			return view('update');
 		}else{
-			$postField = 'newlist_id,names,code,price,zt';
+			$postField = 'newlist_id,names,price,zt,num,fxtime,lever,scprice';
 			$data = $this->request->only(explode(',',$postField),'post',null);
 			$res = NewlistService::update($data);
 			return json(['status'=>'00','msg'=>'修改成功']);

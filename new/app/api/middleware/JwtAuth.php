@@ -15,7 +15,7 @@ class JwtAuth
 		  	$redis = new \Redis();
         
         $redis->connect("127.0.0.1","6379");
-		$redis->auth('123456789');
+
         
       $ok = json_decode($redis->get($token),true);
  

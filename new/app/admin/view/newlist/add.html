@@ -24,6 +24,25 @@
 							<input type="text" autocomplete="off" id="price" value="" name="price" class="form-control" placeholder="请输入发行价格">
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">发行时间：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="fxtime" value="" name="fxtime" class="form-control" placeholder="请选择发行时间">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">杠杆倍数：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="lever" value="" name="lever" class="form-control" placeholder="请输入杠杆倍数">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">最低数量：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="num" value="" name="num" class="form-control" placeholder="请输入最低数量">
+						</div>
+					</div>
+
 					<div class="form-group layui-form">
 						<label class="col-sm-2 control-label">状态：</label>
 						<div class="col-sm-9">
@@ -60,7 +79,7 @@ var CodeInfoDlg = {
 }
 
 CodeInfoDlg.collectData = function () {
-	this.set('newlist_id').set('names').set('code').set('price');
+	this.set('newlist_id').set('names').set('code').set('price').set('fxtime').set('num').set('lever');
 };
 
 CodeInfoDlg.add = function () {
@@ -69,6 +88,7 @@ CodeInfoDlg.add = function () {
 	 if (!this.validate()) {
 	 	return;
 	 }
+
 	 var zt = $("input[name = 'zt']:checked").val();
 	 var ajax = new $ax(Feng.ctxPath + "/Newlist/add", function (data) {
 	 	if ('00' === data.status) {

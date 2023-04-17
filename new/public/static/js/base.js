@@ -21,7 +21,8 @@ CodeInfoDlg.close = function () {
 };
 
 CodeInfoDlg.validate = function () {
-	  $('#CodeInfoForm').data("bootstrapValidator").resetForm();
+	return true;
+	  $('#CodeInfoForm').data("bootstrapValidator");
 	  $('#CodeInfoForm').bootstrapValidator('validate');
 	  return $("#CodeInfoForm").data('bootstrapValidator').isValid();
 };

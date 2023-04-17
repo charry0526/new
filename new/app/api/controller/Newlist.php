@@ -43,25 +43,19 @@ class Newlist extends Common {
 	* {"status":" 201","msg":"查询失败"}
 	*/
 	function index(){
-		
-	
-	 
-	 
- 
 		$limit  = $this->request->get('limit', 20, 'intval');
 		$page   = $this->request->get('page', 1, 'intval');
-
 		$where = [];
 		$where['names'] = $this->request->get('names', '', 'serach_in');
 		$where['code'] = $this->request->get('code', '', 'serach_in');
 		$where['price'] = $this->request->get('price', '', 'serach_in');
 		$where['zt'] = $this->request->get('zt', '', 'serach_in');
-
-		$field = '*';
+		$field = 'newlist_id,names,price,zt,num,fxtime,lever,scprice';
 		$orderby = 'newlist_id desc';
-
 		$res = NewlistService::indexList(formatWhere($where),$field,$orderby,$limit,$page);
-		return $this->ajaxReturn($this->successCode,'返回成功',htmlOutList($res));
+		print_r($res);
+        die;
+        return $this->ajaxReturn($this->successCode,'返回成功',htmlOutList($res));
 	}
 
 

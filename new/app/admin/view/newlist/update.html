@@ -14,15 +14,27 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">申购代码：</label>
-						<div class="col-sm-9">
-							<input type="text" autocomplete="off" id="code" value="{$info.code}" name="code" class="form-control" placeholder="请输入申购代码">
-						</div>
-					</div>
-					<div class="form-group">
 						<label class="col-sm-2 control-label">发行价格：</label>
 						<div class="col-sm-9">
 							<input type="text" autocomplete="off" id="price" value="{$info.price}" name="price" class="form-control" placeholder="请输入发行价格">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">发行时间：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" value="{$info.fxtime}" name="fxtime"  placeholder="请输入上架时间" class="form-control" id="fxtime">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">最低申购数量：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="num" value="{$info.num}" name="num" class="form-control" placeholder="请输入最低申购数量">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">杠杆倍数：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="lever" value="{$info.lever}" name="lever" class="form-control" placeholder="请输入杠杆倍数">
 						</div>
 					</div>
 					<div class="form-group layui-form">
@@ -54,6 +66,7 @@
 <script src="__PUBLIC__/static/js/plugins/layui/layui.js" charset="utf-8"></script>
 <script>
 layui.use(['form'],function(){});
+laydate.render({elem: '#fxtime',type: 'date',trigger:'click'});
 var CodeInfoDlg = {
 	CodeInfoData: {},
 	validateFields: {
@@ -61,7 +74,7 @@ var CodeInfoDlg = {
 }
 
 CodeInfoDlg.collectData = function () {
-	this.set('newlist_id').set('names').set('code').set('price');
+	this.set('newlist_id').set('names').set('price').set('fxtime').set('num').set('lever');
 };
 
 CodeInfoDlg.update = function () {

@@ -17,9 +17,9 @@
 							<div class="col-sm-2">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">申购代码</button>
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">杠杆倍数</button>
 									</div>
-									<input type="text" autocomplete="off" class="form-control" id="code" placeholder="申购代码" />
+									<input type="text" autocomplete="off" class="form-control" id="lever" placeholder="杠杆倍数" />
 								</div>
 							</div>
 							<div class="col-sm-2">
@@ -30,6 +30,23 @@
 									<input type="text" autocomplete="off" class="form-control" id="price" placeholder="发行价格" />
 								</div>
 							</div>
+							<div class="col-sm-2">
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">发行时间</button>
+									</div>
+									<input type="text" autocomplete="off" class="form-control" id="fxtime" placeholder="发行时间" />
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">最低申购数量</button>
+									</div>
+									<input type="text" autocomplete="off" class="form-control" id="num" placeholder="最低申购数量" />
+								</div>
+							</div>
+
 							<div class="col-sm-2">
 								<div class="input-group">
 									<div class="input-group-btn">
@@ -49,7 +66,7 @@
 								</button>
 							</div>
 						</div>
-						<div class="btn-group-sm" id="CodeGoodsTableToolbar" role="group">
+						<!--<div class="btn-group-sm" id="CodeGoodsTableToolbar" role="group">
 						{if condition="in_array('admin/Newlist/add',session('admin.nodes')) || session('admin.role_id') eq 1"}
 						<button type="button" id="add" class="btn btn-primary button-margin" onclick="CodeGoods.add()">
 						<i class="fa fa-plus"></i>&nbsp;添加
@@ -70,7 +87,7 @@
 						<i class="fa fa-eye"></i>&nbsp;查看详情
 						</button>
 						{/if}
-						</div>
+						</div>-->
 						<table id="CodeGoodsTable" data-mobile-responsive="true" data-click-to-select="true">
 							<thead><tr><th data-field="selectItem" data-checkbox="true"></th></tr></thead>
 						</table>
@@ -88,8 +105,10 @@
  			{field: 'selectItem', checkbox: true},
  			{title: '编号', field: 'newlist_id', visible: true, align: 'center', valign: 'middle',sortable: true},
  			{title: '新股名称', field: 'names', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '申购代码', field: 'code', visible: true, align: 'center', valign: 'middle',sortable: true},
+ 			{title: '杠杆倍数', field: 'lever', visible: true, align: 'center', valign: 'middle',sortable: true},
  			{title: '发行价格', field: 'price', visible: true, align: 'center', valign: 'middle',sortable: true},
+ 			{title: '发行时间', field: 'fxtime', visible: true, align: 'center', valign: 'middle',sortable: true},
+ 			{title: '最低申购数量', field: 'num', visible: true, align: 'center', valign: 'middle',sortable: true},
  			{title: '状态', field: 'zt', visible: true, align: 'center', valign: 'middle',sortable: true,formatter:CodeGoods.ztFormatter},
  			{title: '操作', field: '', visible: true, align: 'center', valign: 'middle',formatter: 'CodeGoods.buttonFormatter'},
  		];
