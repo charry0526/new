@@ -30,7 +30,7 @@ return [
             'type'     => 'redis',
             'host'     => '127.0.0.1',
             'port'     => '6379',
-            'password' => '123456789',
+            'password' => 'root2023',
             'select'   => '0',
             // 全局缓存有效期（0为永久有效）
             'expire'   => 0,
@@ -39,6 +39,6 @@ return [
             'timeout'  => 0,
         ],
     ],
-	
-		
+
+
 ];
