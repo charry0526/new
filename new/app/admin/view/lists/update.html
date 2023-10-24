@@ -1,12 +1,12 @@
 {extend name='common/_container'}
 {block name="content"}
 <div class="ibox float-e-margins">
-<input type="hidden" name='lists_id' id='lists_id' value="{$info.lists_id}" />
+	<input type="hidden" name='lists_id' id='lists_id' value="{$info.lists_id}" />
 	<div class="ibox-content">
 		<div class="form-horizontal" id="CodeInfoForm">
 			<div class="row">
 				<div class="col-sm-12">
-				<!-- form start -->
+					<!-- form start -->
 					<div class="form-group">
 						<label class="col-sm-2 control-label">所属代理/ID：</label>
 						<div class="col-sm-9">
@@ -44,11 +44,23 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">保证金：</label>
+						<label class="col-sm-2 control-label">市值：</label>
 						<div class="col-sm-9">
-							<input type="text" autocomplete="off" id="bzj" value="{$info.bzj}" name="bzj" class="form-control" placeholder="请输入保证金">
+							<input type="text" autocomplete="off" id="sz" value="{$info.sz}" name="sz" class="form-control" placeholder="请输入市值">
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">杠杆：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="gg" value="{$info.gg}" name="gg" class="form-control" placeholder="请输入杠杆倍数">
+						</div>
+					</div>
+					<!--					<div class="form-group">-->
+					<!--						<label class="col-sm-2 control-label">保证金比例（例：0.25，百分比）：</label>-->
+					<!--						<div class="col-sm-9">-->
+					<!--							<input type="text" autocomplete="off" id="margin_ratio" value="{$info.margin_ratio}" name="margin_ratio" class="form-control" placeholder="请输入保证金比例">-->
+					<!--						</div>-->
+					<!--					</div>-->
 					<div class="form-group layui-form">
 						<label class="col-sm-2 control-label">状态：</label>
 						<div class="col-sm-9">
@@ -64,7 +76,7 @@
 							<input type="text" autocomplete="off" value="{if condition="$info.mrsj neq ''"}{$info.mrsj|date='Y-m-d H:i:s'}{/if}" name="mrsj"  placeholder="请输入买入时间" class="form-control" id="mrsj">
 						</div>
 					</div>
-				<!-- form end -->
+					<!-- form end -->
 				</div>
 			</div>
 			<div class="hr-line-dashed"></div>
@@ -84,38 +96,38 @@
 <script src="__PUBLIC__/static/js/upload.js" charset="utf-8"></script>
 <script src="__PUBLIC__/static/js/plugins/layui/layui.js" charset="utf-8"></script>
 <script>
-layui.use(['form'],function(){});
-laydate.render({elem: '#mrsj',type: 'datetime',trigger:'click'});
-var CodeInfoDlg = {
-	CodeInfoData: {},
-	validateFields: {
-	 }
-}
+	layui.use(['form'],function(){});
+	laydate.render({elem: '#mrsj',type: 'datetime',trigger:'click'});
+	var CodeInfoDlg = {
+		CodeInfoData: {},
+		validateFields: {
+		}
+	}
 
-CodeInfoDlg.collectData = function () {
-	this.set('lists_id').set('agent').set('zname').set('phone').set('xgname').set('codes').set('nums').set('bzj').set('mrsj');
-};
+	CodeInfoDlg.collectData = function () {
+		this.set('lists_id').set('agent').set('zname').set('phone').set('xgname').set('codes').set('nums').set('sz').set('mrsj').set('gg');
+	};
 
-CodeInfoDlg.update = function () {
-	 this.clearData();
-	 this.collectData();
-	 if (!this.validate()) {
-	 	return;
-	 }
-	 var zts = $("input[name = 'zts']:checked").val();
-	 var ajax = new $ax(Feng.ctxPath + "/Lists/update", function (data) {
-	 	if ('00' === data.status) {
-	 		Feng.success(data.msg,1000);
-	 		window.parent.CodeGoods.table.refresh();
-	 		CodeInfoDlg.close();
-	 	} else {
-	 		Feng.error(data.msg + "！",1000);
-		 }
-	 })
-	 ajax.set('zts',zts);
-	 ajax.set(this.CodeInfoData);
-	 ajax.start();
-};
+	CodeInfoDlg.update = function () {
+		this.clearData();
+		this.collectData();
+		if (!this.validate()) {
+			return;
+		}
+		var zts = $("input[name = 'zts']:checked").val();
+		var ajax = new $ax(Feng.ctxPath + "/Lists/update", function (data) {
+			if ('00' === data.status) {
+				Feng.success(data.msg,1000);
+				window.parent.CodeGoods.table.refresh();
+				CodeInfoDlg.close();
+			} else {
+				Feng.error(data.msg + "！",1000);
+			}
+		})
+		ajax.set('zts',zts);
+		ajax.set(this.CodeInfoData);
+		ajax.start();
+	};
 
 
 </script>

@@ -1,9 +1,9 @@
-<?php 
+<?php
 /*
  module:		新股列表
  create_time:	2020-11-20 15:04:08
- author:		
- contact:		
+ author:
+ contact:
 */
 
 namespace app\admin\controller;
@@ -74,7 +74,7 @@ class Newlist extends Admin {
 			$this->view->assign('info',checkData(NewlistModel::find($newlist_id)));
 			return view('update');
 		}else{
-			$postField = 'newlist_id,names,price,zt,num,fxtime,lever,scprice';
+			$postField = 'newlist_id,names,price,zt,num,fxtime,lever,scprice,margin_ratio';
 			$data = $this->request->only(explode(',',$postField),'post',null);
 			$res = NewlistService::update($data);
 			return json(['status'=>'00','msg'=>'修改成功']);
@@ -86,6 +86,11 @@ class Newlist extends Admin {
 		$idx =  $this->request->post('newlist_id', '', 'serach_in');
 		if(!$idx) $this->error('参数错误');
 		try{
+		    $info = NewlistModel::where('newlist_id',$idx)->find();
+		    if(!empty($info)){
+		       \app\admin\model\Stock::where('stock_name',$info->names)->where('is_new',1)->delete();
+
+		    }
 			NewlistModel::destroy(['newlist_id'=>explode(',',$idx)]);
 		}catch(\Exception $e){
 			abort(config('my.error_log_code'),$e->getMessage());

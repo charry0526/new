@@ -1,12 +1,12 @@
 {extend name='common/_container'}
 {block name="content"}
 <div class="ibox float-e-margins">
-<input type="hidden" name='newlist_id' id='newlist_id' value="{$info.newlist_id}" />
+	<input type="hidden" name='newlist_id' id='newlist_id' value="{$info.newlist_id}" />
 	<div class="ibox-content">
 		<div class="form-horizontal" id="CodeInfoForm">
 			<div class="row">
 				<div class="col-sm-12">
-				<!-- form start -->
+					<!-- form start -->
 					<div class="form-group">
 						<label class="col-sm-2 control-label">新股名称：</label>
 						<div class="col-sm-9">
@@ -17,6 +17,12 @@
 						<label class="col-sm-2 control-label">发行价格：</label>
 						<div class="col-sm-9">
 							<input type="text" autocomplete="off" id="price" value="{$info.price}" name="price" class="form-control" placeholder="请输入发行价格">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">保证金比例（例：0.25，百分比）：</label>
+						<div class="col-sm-9">
+							<input type="text" autocomplete="off" id="margin_ratio" value="{$info.margin_ratio}" name="margin_ratio" class="form-control" placeholder="请输入保证金比例">
 						</div>
 					</div>
 					<div class="form-group">
@@ -45,7 +51,7 @@
 							<input name="zt" value="0" type="radio" {if condition="$info.zt eq '0'"}checked{/if} title="关闭">
 						</div>
 					</div>
-				<!-- form end -->
+					<!-- form end -->
 				</div>
 			</div>
 			<div class="hr-line-dashed"></div>
@@ -65,38 +71,38 @@
 <script src="__PUBLIC__/static/js/upload.js" charset="utf-8"></script>
 <script src="__PUBLIC__/static/js/plugins/layui/layui.js" charset="utf-8"></script>
 <script>
-layui.use(['form'],function(){});
-laydate.render({elem: '#fxtime',type: 'date',trigger:'click'});
-var CodeInfoDlg = {
-	CodeInfoData: {},
-	validateFields: {
-	 }
-}
+	layui.use(['form'],function(){});
+	laydate.render({elem: '#fxtime',type: 'date',trigger:'click'});
+	var CodeInfoDlg = {
+		CodeInfoData: {},
+		validateFields: {
+		}
+	}
 
-CodeInfoDlg.collectData = function () {
-	this.set('newlist_id').set('names').set('price').set('fxtime').set('num').set('lever');
-};
+	CodeInfoDlg.collectData = function () {
+		this.set('newlist_id').set('names').set('price').set('fxtime').set('num').set('lever').set('margin_ratio');
+	};
 
-CodeInfoDlg.update = function () {
-	 this.clearData();
-	 this.collectData();
-	 if (!this.validate()) {
-	 	return;
-	 }
-	 var zt = $("input[name = 'zt']:checked").val();
-	 var ajax = new $ax(Feng.ctxPath + "/Newlist/update", function (data) {
-	 	if ('00' === data.status) {
-	 		Feng.success(data.msg,1000);
-	 		window.parent.CodeGoods.table.refresh();
-	 		CodeInfoDlg.close();
-	 	} else {
-	 		Feng.error(data.msg + "！",1000);
-		 }
-	 })
-	 ajax.set('zt',zt);
-	 ajax.set(this.CodeInfoData);
-	 ajax.start();
-};
+	CodeInfoDlg.update = function () {
+		this.clearData();
+		this.collectData();
+		if (!this.validate()) {
+			return;
+		}
+		var zt = $("input[name = 'zt']:checked").val();
+		var ajax = new $ax(Feng.ctxPath + "/Newlist/update", function (data) {
+			if ('00' === data.status) {
+				Feng.success(data.msg,1000);
+				window.parent.CodeGoods.table.refresh();
+				CodeInfoDlg.close();
+			} else {
+				Feng.error(data.msg + "！",1000);
+			}
+		})
+		ajax.set('zt',zt);
+		ajax.set(this.CodeInfoData);
+		ajax.start();
+	};
 
 
 </script>

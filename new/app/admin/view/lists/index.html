@@ -2,9 +2,9 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="ibox float-e-margins">
-			<div class="ibox-content"> 
-				<div class="row row-lg"> 
-					<div class="col-sm-12"> 
+			<div class="ibox-content">
+				<div class="row row-lg">
+					<div class="col-sm-12">
 						<div class="row" id="searchGroup">
 							<div class="col-sm-2">
 								<div class="input-group">
@@ -41,14 +41,6 @@
 							<div class="col-sm-2">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">申购代码</button>
-									</div>
-									<input type="text" autocomplete="off" class="form-control" id="codes" placeholder="申购代码" />
-								</div>
-							</div>
-							<div class="col-sm-2">
-								<div class="input-group">
-									<div class="input-group-btn">
 										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">申购数量</button>
 									</div>
 									<input type="text" autocomplete="off" class="form-control" id="nums" placeholder="申购数量" />
@@ -57,9 +49,25 @@
 							<div class="col-sm-2">
 								<div class="input-group">
 									<div class="input-group-btn">
-										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">保证金</button>
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">杠杆</button>
 									</div>
-									<input type="text" autocomplete="off" class="form-control" id="bzj" placeholder="保证金" />
+									<input type="text" autocomplete="off" class="form-control" id="gg" placeholder="杠杆" />
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">总市值</button>
+									</div>
+									<input type="text" autocomplete="off" class="form-control" id="sz" placeholder="总市值" />
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">扣除金额</button>
+									</div>
+									<input type="text" autocomplete="off" class="form-control" id="bzj" placeholder="扣除金额" />
 								</div>
 							</div>
 							<div class="col-sm-2">
@@ -91,26 +99,26 @@
 							</div>
 						</div>
 						<div class="btn-group-sm" id="CodeGoodsTableToolbar" role="group">
-						{if condition="in_array('admin/Lists/add',session('admin.nodes')) || session('admin.role_id') eq 1"}
-						<button type="button" id="add" class="btn btn-primary button-margin" onclick="CodeGoods.add()">
-						<i class="fa fa-plus"></i>&nbsp;添加
-						</button>
-						{/if}
-						{if condition="in_array('admin/Lists/update',session('admin.nodes')) || session('admin.role_id') eq 1"}
-						<button type="button" id="update" class="btn btn-success button-margin" onclick="CodeGoods.update()">
-						<i class="fa fa-pencil"></i>&nbsp;修改
-						</button>
-						{/if}
-						{if condition="in_array('admin/Lists/delete',session('admin.nodes')) || session('admin.role_id') eq 1"}
-						<button type="button" id="delete" class="btn btn-danger button-margin" onclick="CodeGoods.delete()">
-						<i class="fa fa-trash"></i>&nbsp;删除
-						</button>
-						{/if}
-						{if condition="in_array('admin/Lists/view',session('admin.nodes')) || session('admin.role_id') eq 1"}
-						<button type="button" id="view" class="btn btn-info button-margin" onclick="CodeGoods.view()">
-						<i class="fa fa-eye"></i>&nbsp;查看详情
-						</button>
-						{/if}
+							{if condition="in_array('admin/Lists/add',session('admin.nodes')) || session('admin.role_id') eq 1"}
+							<button type="button" id="add" class="btn btn-primary button-margin" onclick="CodeGoods.add()">
+								<i class="fa fa-plus"></i>&nbsp;添加
+							</button>
+							{/if}
+							{if condition="in_array('admin/Lists/update',session('admin.nodes')) || session('admin.role_id') eq 1"}
+							<button type="button" id="update" class="btn btn-success button-margin" onclick="CodeGoods.update()">
+								<i class="fa fa-pencil"></i>&nbsp;修改
+							</button>
+							{/if}
+							{if condition="in_array('admin/Lists/delete',session('admin.nodes')) || session('admin.role_id') eq 1"}
+							<button type="button" id="delete" class="btn btn-danger button-margin" onclick="CodeGoods.delete()">
+								<i class="fa fa-trash"></i>&nbsp;删除
+							</button>
+							{/if}
+							{if condition="in_array('admin/Lists/view',session('admin.nodes')) || session('admin.role_id') eq 1"}
+							<button type="button" id="view" class="btn btn-info button-margin" onclick="CodeGoods.view()">
+								<i class="fa fa-eye"></i>&nbsp;查看详情
+							</button>
+							{/if}
 						</div>
 						<table id="CodeGoodsTable" data-mobile-responsive="true" data-click-to-select="true">
 							<thead><tr><th data-field="selectItem" data-checkbox="true"></th></tr></thead>
@@ -125,21 +133,23 @@
 	var CodeGoods = {id: "CodeGoodsTable",seItem: null,table: null,layerIndex: -1};
 
 	CodeGoods.initColumn = function () {
- 		return [
- 			{field: 'selectItem', checkbox: true},
- 			{title: '编号', field: 'lists_id', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '所属代理/ID', field: 'agent', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '真实姓名', field: 'zname', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '手机号', field: 'phone', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '新股名称', field: 'xgname', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '申购代码', field: 'codes', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '申购数量', field: 'nums', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '保证金', field: 'bzj', visible: true, align: 'center', valign: 'middle',sortable: true},
- 			{title: '状态', field: 'zts', visible: true, align: 'center', valign: 'middle',sortable: true,formatter:CodeGoods.ztsFormatter},
- 			{title: '买入时间', field: 'mrsj', visible: true, align: 'center', valign: 'middle',sortable: true,formatter:CodeGoods.mrsjFormatter},
- 			{title: '操作', field: '', visible: true, align: 'center', valign: 'middle',formatter: 'CodeGoods.buttonFormatter'},
- 		];
- 	};
+		return [
+			{field: 'selectItem', checkbox: true},
+			{title: '编号', field: 'lists_id', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '所属代理/ID', field: 'agent', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '真实姓名', field: 'zname', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '手机号', field: 'phone', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '新股名称', field: 'xgname', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '申购数量', field: 'nums', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '扣除金额', field: 'bzj', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '杠杆', field: 'gg', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '保证金比例', field: 'margin_ratio', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '总市值', field: 'sz', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '状态', field: 'zts', visible: true, align: 'center', valign: 'middle',sortable: true,formatter:CodeGoods.ztsFormatter},
+			{title: '买入时间', field: 'mrsj', visible: true, align: 'center', valign: 'middle',sortable: true},
+			{title: '操作', field: '', visible: true, align: 'center', valign: 'middle',formatter: 'CodeGoods.buttonFormatter'},
+		];
+	};
 
 	CodeGoods.buttonFormatter = function(value,row,index) {
 		if(row.lists_id){
@@ -147,251 +157,256 @@
 			{if condition="in_array('admin/Lists/update',session('admin.nodes')) || session('admin.role_id') eq 1"}
 			str += '<button type="button" class="btn btn-success btn-xs" title="修改"  onclick="CodeGoods.update('+row.lists_id+')"><i class="fa fa-pencil"></i>&nbsp;修改</button>&nbsp;';
 			{/if}
-			{if condition="in_array('admin/Lists/delete',session('admin.nodes')) || session('admin.role_id') eq 1"}
-			str += '<button type="button" class="btn btn-danger btn-xs" title="删除"  onclick="CodeGoods.delete('+row.lists_id+')"><i class="fa fa-trash"></i>&nbsp;删除</button>&nbsp;';
-			{/if}
-			{if condition="in_array('admin/Lists/shtg',session('admin.nodes')) || session('admin.role_id') eq 1"}
-			str += '<button type="button" class="btn btn-primary btn-xs" title="审核通过"  onclick="CodeGoods.shtg('+row.lists_id+')"><i class="fa fa-pencil"></i>&nbsp;审核通过</button>&nbsp;';
-			{/if}
-			{if condition="in_array('admin/Lists/shwtg',session('admin.nodes')) || session('admin.role_id') eq 1"}
-			str += '<button type="button" class="btn btn-danger btn-xs" title="审核未通过"  onclick="CodeGoods.shwtg('+row.lists_id+')"><i class="fa fa-pencil"></i>&nbsp;审核未通过</button>&nbsp;';
-			{/if}
-			return str;
-		}
-	}
-
-	CodeGoods.ztsFormatter = function(value,row,index) {
-		if(value !== null){
-			var value = value.toString();
-			switch(value){
-				case '1':
-					return '<span class="label label-success">已中签</span>';
-				break;
-				case '2':
-					return '<span class="label label-warning">未中签</span>';
-				break;
-				case '3':
-					return '<span class="label label-info">待审核</span>';
-				break;
-			}
-		}
-	}
-
-	CodeGoods.mrsjFormatter = function(value,row,index) {
-		if(value){
-			return formatDateTime(value,'Y-m-d H:i:s');	
-		}
-	}
-
-	CodeGoods.formParams = function() {
-		var queryData = {};
-		queryData['offset'] = 0;
-		queryData['agent'] = $("#agent").val();
-		queryData['zname'] = $("#zname").val();
-		queryData['phone'] = $("#phone").val();
-		queryData['xgname'] = $("#xgname").val();
-		queryData['codes'] = $("#codes").val();
-		queryData['nums'] = $("#nums").val();
-		queryData['bzj'] = $("#bzj").val();
-		queryData['zts'] = $("#zts").val();
-		queryData['mrsj_start'] = $("#mrsj").val().split(" - ")[0];
-		queryData['mrsj_end'] = $("#mrsj").val().split(" - ")[1];
-		return queryData;
-	}
-
-	CodeGoods.check = function () {
-		var selected = $('#' + this.id).bootstrapTable('getSelections');
-		if(selected.length == 0){
-			Feng.info("请先选中表格中的某一记录！");
-			return false;
-		}else{
-			CodeGoods.seItem = selected;
-			return true;
-		}
-	};
-
-	CodeGoods.add = function (value) {
-		var url = location.search;
-		var index = layer.open({type: 2,title: '添加',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/add'+url});
-		this.layerIndex = index;
-		if(!IsPC()){layer.full(index)}
-	}
-
-
-	CodeGoods.update = function (value) {
-		if(value){
-			var index = layer.open({type: 2,title: '修改',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/update?lists_id='+value});
-			if(!IsPC()){layer.full(index)}
-		}else{
-			if (this.check()) {
-				var idx = '';
-				$.each(CodeGoods.seItem, function() {
-					idx += ',' + this.lists_id;
-				});
-				idx = idx.substr(1);
-				if(idx.indexOf(",") !== -1){
-					Feng.info("请选择单条数据！");
-					return false;
-				}
-				var index = layer.open({type: 2,title: '修改',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/update?lists_id='+idx});
-				this.layerIndex = index;
-				if(!IsPC()){layer.full(index)}
-			}
-		}
-	}
-
-
-	CodeGoods.delete = function (value) {
-		if(value){
-			Feng.confirm("是否删除选中项？", function () {
-				var ajax = new $ax(Feng.ctxPath + "/Lists/delete", function (data) {
-					if ('00' === data.status) {
-						Feng.success(data.msg);
-						CodeGoods.table.refresh();
-					} else {
-						Feng.error(data.msg);
-					}
-				});
-				ajax.set('lists_id', value);
-				ajax.start();
-			});
-		}else{
-			if (this.check()) {
-				var idx = '';
-				$.each(CodeGoods.seItem, function() {
-					idx += ',' + this.lists_id;
-				});
-				idx = idx.substr(1);
-				Feng.confirm("是否删除选中项？", function () {
-					var ajax = new $ax(Feng.ctxPath + "/Lists/delete", function (data) {
-						if ('00' === data.status) {
-							Feng.success(data.msg,1000);
-							CodeGoods.table.refresh();
-						} else {
-							Feng.error(data.msg,1000);
+				{if condition="in_array('admin/Lists/delete',session('admin.nodes')) || session('admin.role_id') eq 1"}
+				str += '<button type="button" class="btn btn-danger btn-xs" title="删除"  onclick="CodeGoods.delete('+row.lists_id+')"><i class="fa fa-trash"></i>&nbsp;删除</button>&nbsp;';
+				{/if}
+					{if condition="in_array('admin/Lists/shtg',session('admin.nodes')) || session('admin.role_id') eq 1"}
+					str += '<button type="button" class="btn btn-primary btn-xs" title="审核通过"  onclick="CodeGoods.shtg('+row.lists_id+')"><i class="fa fa-pencil"></i>&nbsp;审核通过</button>&nbsp;';
+					{/if}
+						{if condition="in_array('admin/Lists/shwtg',session('admin.nodes')) || session('admin.role_id') eq 1"}
+						str += '<button type="button" class="btn btn-danger btn-xs" title="审核未通过"  onclick="CodeGoods.shwtg('+row.lists_id+')"><i class="fa fa-pencil"></i>&nbsp;审核未通过</button>&nbsp;';
+						{/if}
+							return str;
 						}
-					});
-					ajax.set('lists_id', idx);
-					ajax.start();
-				});
-			}
-		}
-	}
-
-
-	CodeGoods.view = function (value) {
-		if(value){
-			var index = layer.open({type: 2,title: '查看详情',area: ['800px', '600px'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/view?lists_id='+value});
-			if(!IsPC()){layer.full(index)}
-		}else{
-			if (this.check()) {
-				var idx = '';
-				$.each(CodeGoods.seItem, function() {
-					idx += ',' + this.lists_id;
-				});
-				idx = idx.substr(1);
-				if(idx.indexOf(",") !== -1){
-					Feng.info("请选择单条数据！");
-					return false;
-				}
-				var index = layer.open({type: 2,title: '查看详情',area: ['800px', '600px'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/view?lists_id='+idx});
-				this.layerIndex = index;
-				if(!IsPC()){layer.full(index)}
-			}
-		}
-	}
-
-
-	CodeGoods.shtg = function (value) {
-		if(value){
-			Feng.confirm("是否审核通过选中项？", function () {
-				var ajax = new $ax(Feng.ctxPath + "/Lists/shtg", function (data) {
-					if ('00' === data.status) {
-						Feng.success(data.msg);
-						CodeGoods.table.refresh();
-					} else {
-						Feng.error(data.msg);
 					}
-				});
-				ajax.set('lists_id', value);
-				ajax.start();
-			});
-		}else{
-			if (this.check()) {
-				var idx = '';
-				$.each(CodeGoods.seItem, function() {
-					idx += ',' + this.lists_id;
-				});
-				idx = idx.substr(1);
-				Feng.confirm("是否审核通过选中项？", function () {
-					var ajax = new $ax(Feng.ctxPath + "/Lists/shtg", function (data) {
-						if ('00' === data.status) {
-							Feng.success(data.msg);
-							CodeGoods.table.refresh();
-						} else {
-							Feng.error(data.msg);
+
+					CodeGoods.ztsFormatter = function(value,row,index) {
+						if(value !== null){
+							var value = value.toString();
+							switch(value){
+								case '1':
+									return '<span class="label label-success">通过</span>';
+									break;
+								case '2':
+									return '<span class="label label-warning">未通过</span>';
+									break;
+								case '3':
+									return '<span class="label label-info">待审核</span>';
+									break;
+								case '4':
+									return '<span class="label label-info">已购买</span>';
+									break;
+							}
 						}
-					});
-					ajax.set('lists_id', idx);
-					ajax.set('statusData', value);
-					ajax.start();
-				});
-			}
-		}
-	}
-
-
-	CodeGoods.shwtg = function (value) {
-		if(value){
-			Feng.confirm("是否审核未通过选中项？", function () {
-				var ajax = new $ax(Feng.ctxPath + "/Lists/shwtg", function (data) {
-					if ('00' === data.status) {
-						Feng.success(data.msg);
-						CodeGoods.table.refresh();
-					} else {
-						Feng.error(data.msg);
 					}
-				});
-				ajax.set('lists_id', value);
-				ajax.start();
-			});
-		}else{
-			if (this.check()) {
-				var idx = '';
-				$.each(CodeGoods.seItem, function() {
-					idx += ',' + this.lists_id;
-				});
-				idx = idx.substr(1);
-				Feng.confirm("是否审核未通过选中项？", function () {
-					var ajax = new $ax(Feng.ctxPath + "/Lists/shwtg", function (data) {
-						if ('00' === data.status) {
-							Feng.success(data.msg);
-							CodeGoods.table.refresh();
-						} else {
-							Feng.error(data.msg);
+
+					CodeGoods.mrsjFormatter = function(value,row,index) {
+						if(value){
+							return formatDateTime(value,'Y-m-d H:i:s');
 						}
+					}
+
+					CodeGoods.formParams = function() {
+						var queryData = {};
+						queryData['offset'] = 0;
+						queryData['agent'] = $("#agent").val();
+						queryData['zname'] = $("#zname").val();
+						queryData['phone'] = $("#phone").val();
+						queryData['xgname'] = $("#xgname").val();
+						queryData['codes'] = $("#codes").val();
+						queryData['nums'] = $("#nums").val();
+						queryData['bzj'] = $("#bzj").val();
+						queryData['gg'] = $("#bzj").val();
+						queryData['sz'] = $("#bzj").val();
+						queryData['zts'] = $("#zts").val();
+						queryData['mrsj_start'] = $("#mrsj").val().split(" - ")[0];
+						queryData['mrsj_end'] = $("#mrsj").val().split(" - ")[1];
+						return queryData;
+					}
+
+					CodeGoods.check = function () {
+						var selected = $('#' + this.id).bootstrapTable('getSelections');
+						if(selected.length == 0){
+							Feng.info("请先选中表格中的某一记录！");
+							return false;
+						}else{
+							CodeGoods.seItem = selected;
+							return true;
+						}
+					};
+
+					CodeGoods.add = function (value) {
+						var url = location.search;
+						var index = layer.open({type: 2,title: '添加',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/add'+url});
+						this.layerIndex = index;
+						if(!IsPC()){layer.full(index)}
+					}
+
+
+					CodeGoods.update = function (value) {
+						if(value){
+							var index = layer.open({type: 2,title: '修改',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/update?lists_id='+value});
+							if(!IsPC()){layer.full(index)}
+						}else{
+							if (this.check()) {
+								var idx = '';
+								$.each(CodeGoods.seItem, function() {
+									idx += ',' + this.lists_id;
+								});
+								idx = idx.substr(1);
+								if(idx.indexOf(",") !== -1){
+									Feng.info("请选择单条数据！");
+									return false;
+								}
+								var index = layer.open({type: 2,title: '修改',area: ['800px', '100%'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/update?lists_id='+idx});
+								this.layerIndex = index;
+								if(!IsPC()){layer.full(index)}
+							}
+						}
+					}
+
+
+					CodeGoods.delete = function (value) {
+						if(value){
+							Feng.confirm("是否删除选中项？", function () {
+								var ajax = new $ax(Feng.ctxPath + "/Lists/delete", function (data) {
+									if ('00' === data.status) {
+										Feng.success(data.msg);
+										CodeGoods.table.refresh();
+									} else {
+										Feng.error(data.msg);
+									}
+								});
+								ajax.set('lists_id', value);
+								ajax.start();
+							});
+						}else{
+							if (this.check()) {
+								var idx = '';
+								$.each(CodeGoods.seItem, function() {
+									idx += ',' + this.lists_id;
+								});
+								idx = idx.substr(1);
+								Feng.confirm("是否删除选中项？", function () {
+									var ajax = new $ax(Feng.ctxPath + "/Lists/delete", function (data) {
+										if ('00' === data.status) {
+											Feng.success(data.msg,1000);
+											CodeGoods.table.refresh();
+										} else {
+											Feng.error(data.msg,1000);
+										}
+									});
+									ajax.set('lists_id', idx);
+									ajax.start();
+								});
+							}
+						}
+					}
+
+
+					CodeGoods.view = function (value) {
+						if(value){
+							var index = layer.open({type: 2,title: '查看详情',area: ['800px', '600px'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/view?lists_id='+value});
+							if(!IsPC()){layer.full(index)}
+						}else{
+							if (this.check()) {
+								var idx = '';
+								$.each(CodeGoods.seItem, function() {
+									idx += ',' + this.lists_id;
+								});
+								idx = idx.substr(1);
+								if(idx.indexOf(",") !== -1){
+									Feng.info("请选择单条数据！");
+									return false;
+								}
+								var index = layer.open({type: 2,title: '查看详情',area: ['800px', '600px'],fix: false, maxmin: true,content: Feng.ctxPath + '/Lists/view?lists_id='+idx});
+								this.layerIndex = index;
+								if(!IsPC()){layer.full(index)}
+							}
+						}
+					}
+
+
+					CodeGoods.shtg = function (value) {
+						if(value){
+							Feng.confirm("是否审核通过选中项？", function () {
+								var ajax = new $ax(Feng.ctxPath + "/Lists/shtg", function (data) {
+									if ('00' === data.status) {
+										Feng.success(data.msg);
+										CodeGoods.table.refresh();
+									} else {
+										Feng.error(data.msg);
+									}
+								});
+								ajax.set('lists_id', value);
+								ajax.start();
+							});
+						}else{
+							if (this.check()) {
+								var idx = '';
+								$.each(CodeGoods.seItem, function() {
+									idx += ',' + this.lists_id;
+								});
+								idx = idx.substr(1);
+								Feng.confirm("是否审核通过选中项？", function () {
+									var ajax = new $ax(Feng.ctxPath + "/Lists/shtg", function (data) {
+										if ('00' === data.status) {
+											Feng.success(data.msg);
+											CodeGoods.table.refresh();
+										} else {
+											Feng.error(data.msg);
+										}
+									});
+									ajax.set('lists_id', idx);
+									ajax.set('statusData', value);
+									ajax.start();
+								});
+							}
+						}
+					}
+
+
+					CodeGoods.shwtg = function (value) {
+						if(value){
+							Feng.confirm("是否审核未通过选中项？", function () {
+								var ajax = new $ax(Feng.ctxPath + "/Lists/shwtg", function (data) {
+									if ('00' === data.status) {
+										Feng.success(data.msg);
+										CodeGoods.table.refresh();
+									} else {
+										Feng.error(data.msg);
+									}
+								});
+								ajax.set('lists_id', value);
+								ajax.start();
+							});
+						}else{
+							if (this.check()) {
+								var idx = '';
+								$.each(CodeGoods.seItem, function() {
+									idx += ',' + this.lists_id;
+								});
+								idx = idx.substr(1);
+								Feng.confirm("是否审核未通过选中项？", function () {
+									var ajax = new $ax(Feng.ctxPath + "/Lists/shwtg", function (data) {
+										if ('00' === data.status) {
+											Feng.success(data.msg);
+											CodeGoods.table.refresh();
+										} else {
+											Feng.error(data.msg);
+										}
+									});
+									ajax.set('lists_id', idx);
+									ajax.set('statusData', value);
+									ajax.start();
+								});
+							}
+						}
+					}
+
+
+					CodeGoods.search = function() {
+						CodeGoods.table.refresh({query : CodeGoods.formParams()});
+					};
+
+					$(function() {
+						var defaultColunms = CodeGoods.initColumn();
+						var url = location.search;
+						var table = new BSTable(CodeGoods.id, Feng.ctxPath+"/Lists/index"+url,defaultColunms,20);
+						table.setPaginationType("server");
+						table.setQueryParams(CodeGoods.formParams());
+						CodeGoods.table = table.init();
 					});
-					ajax.set('lists_id', idx);
-					ajax.set('statusData', value);
-					ajax.start();
-				});
-			}
-		}
-	}
-
-
-	CodeGoods.search = function() {
-		CodeGoods.table.refresh({query : CodeGoods.formParams()});
-	};
-
-	$(function() {
-		var defaultColunms = CodeGoods.initColumn();
-		var url = location.search;
-		var table = new BSTable(CodeGoods.id, Feng.ctxPath+"/Lists/index"+url,defaultColunms,20);
-		table.setPaginationType("server");
-		table.setQueryParams(CodeGoods.formParams());
-		CodeGoods.table = table.init();
-	});
-	laydate.render({elem: '#mrsj',type: 'datetime',range:true});
+					laydate.render({elem: '#mrsj',type: 'datetime',range:true});
 </script>
 {/block}

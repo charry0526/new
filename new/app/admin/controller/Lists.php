@@ -1,9 +1,9 @@
-<?php 
+<?php
 /*
  module:		申请列表
  create_time:	2020-11-20 15:27:51
- author:		
- contact:		
+ author:
+ contact:
 */
 
 namespace app\admin\controller;
@@ -42,7 +42,7 @@ class Lists extends Admin {
 			$order  = $this->request->post('order', '', 'serach_in');	//排序字段 bootstrap-table 传入
 			$sort  = $this->request->post('sort', '', 'serach_in');		//排序方式 desc 或 asc
 
-			$field = 'lists_id,agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj';
+			$field = 'lists_id,agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj,gg,sz,margin_ratio';
 			$orderby = ($sort && $order) ? $sort.' '.$order : 'lists_id desc';
 
 			$res = ListsService::indexList(formatWhere($where),$field,$orderby,$limit,$page);
@@ -55,7 +55,7 @@ class Lists extends Admin {
 		if (!$this->request->isPost()){
 			return view('add');
 		}else{
-			$postField = 'agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj';
+			$postField = 'agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj,gg,sz';
 			$data = $this->request->only(explode(',',$postField),'post',null);
 			$res = ListsService::add($data);
 			return json(['status'=>'00','msg'=>'添加成功']);
@@ -70,7 +70,7 @@ class Lists extends Admin {
 			$this->view->assign('info',checkData(ListsModel::find($lists_id)));
 			return view('update');
 		}else{
-			$postField = 'lists_id,agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj';
+			$postField = 'lists_id,agent,zname,phone,xgname,codes,nums,bzj,zts,mrsj,gg,sz';
 			$data = $this->request->only(explode(',',$postField),'post',null);
 			$res = ListsService::update($data);
 			return json(['status'=>'00','msg'=>'修改成功']);
