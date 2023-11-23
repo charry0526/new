@@ -9,7 +9,9 @@
 namespace app\admin\controller;
 
 use app\admin\service\NewlistService;
+use app\admin\service\StockService;
 use app\admin\model\Newlist as NewlistModel;
+use app\admin\model\Stock as StockModel;
 use think\facade\Db;
 
 class Newlist extends Admin {
@@ -88,14 +90,19 @@ class Newlist extends Admin {
 		try{
 		    $info = NewlistModel::where('newlist_id',$idx)->find();
 		    if(!empty($info)){
-		       \app\admin\model\Stock::where('stock_name',$info->names)->where('is_new',1)->delete();
-
+		        //根据股票代码名称查询stock数据
+                $stockInfo = Db::name('stock')->where('stock_name',$info->names)->where('is_new',1)->find();
+                if(!empty($stockInfo)){
+                    StockModel::destroy(['id'=>explode(',',$stockInfo['id'])]);
+                    NewlistModel::destroy(['newlist_id'=>explode(',',$idx)]);
+                    return json(['status'=>'00','msg'=>'操作成功']);
+                }
 		    }
-			NewlistModel::destroy(['newlist_id'=>explode(',',$idx)]);
 		}catch(\Exception $e){
 			abort(config('my.error_log_code'),$e->getMessage());
+			return json(['status'=>'-2','msg'=>'操作异常，请排查问题！']);
 		}
-		return json(['status'=>'00','msg'=>'操作成功']);
+		return json(['status'=>'-1','msg'=>'操作失败！']);
 	}
 
 	/*查看详情*/
